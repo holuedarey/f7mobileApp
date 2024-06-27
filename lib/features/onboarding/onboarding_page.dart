@@ -14,37 +14,37 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.black,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Spacer(),
-          Image.asset(image, height: 200),
-          const VerticalSpace(size: 90),
-          SizedBox(
-            width: 200,
-            child: Text(
-              title,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headlineSmall!.copyWith(
-                  fontWeight: FontWeight.w500,
-                  color: AppColors.backgroundColor),
+      backgroundColor: Colors.black,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Spacer(),
+            Image.asset(image, height: 200),
+            const VerticalSpace(size: 40),
+            SizedBox(
+              width: 200,
+              child: Text(
+                title,
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headlineSmall!.copyWith(
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.backgroundColor),
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 16,
-          ),
-          Text(description,
-              textAlign: TextAlign.center,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium!
-                  .copyWith(color: AppColors.backgroundColor)),
-          const SizedBox(
-            height: 70,
-          ),
-        ],
+            const VerticalSpace(size: 25),
+            Text(description,
+                textAlign: TextAlign.center,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyMedium!
+                    .copyWith(color: AppColors.backgroundColor)),
+            const SizedBox(
+              height: 70,
+            ),
+          ],
+        ),
       ),
     );
   }

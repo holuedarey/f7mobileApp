@@ -3,27 +3,17 @@
 // import 'package:flutter/services.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-// void main() async {
-//   // Add this line
-//   await ScreenUtil.ensureScreenSize();
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await SystemChrome.setPreferredOrientations([
-//     DeviceOrientation.portraitUp,
-//     DeviceOrientation.landscapeRight,
-//     DeviceOrientation.portraitDown,
-//     DeviceOrientation.landscapeLeft
-//   ]);
-//   runApp(const F7App());
-// }
-
 import 'dart:async';
+
+import 'package:f7apparel_mobile/common/configurations/app_config.dart';
+import 'package:f7apparel_mobile/myapp.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'myapp.dart';
-import 'common/configurations/app_config.dart';
 
 void main() async {
+
   mainSetup(Flavor.development);
 }
 
@@ -41,15 +31,9 @@ String getFlavourName(Flavor flavor) {
 mainSetup(Flavor flavor) async {
   await ScreenUtil.ensureScreenSize();
   WidgetsFlutterBinding.ensureInitialized();
-  await SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.landscapeRight,
-    DeviceOrientation.portraitDown,
-    DeviceOrientation.landscapeLeft
-  ]);
   //Since dart runs on Single isolate, you can capture errors directly with Zone using "runZonedGuarded"
   await runZonedGuarded(
-    () async {
+        () async {
       AppConfig(
         flavor: flavor,
         name: getFlavourName(flavor),
@@ -59,12 +43,12 @@ mainSetup(Flavor flavor) async {
       SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.landscapeRight]);
       runApp(const F7App());
     },
-    (error, stackTrace) {
+        (error, stackTrace) {
       FlutterError.dumpErrorToConsole(
         FlutterErrorDetails(
           exception: error,
           stack: stackTrace,
-        ), 
+        ),
         forceReport: true,
       );
     },
