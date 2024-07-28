@@ -236,7 +236,7 @@ class CustomTextFormField2State extends State<CustomTextFormField2> {
             prefixIcon: widget.prefix,
             isDense: true,
             alignLabelWithHint: true,
-            contentPadding: widget.padding ??  EdgeInsets.fromLTRB(16.w, 22.h, 16.w, 22.h),
+            // contentPadding: widget.padding ??  EdgeInsets.fromLTRB(16.w, 22.h, 16.w, 22.h),
 
             // enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(co8ntext).colorScheme.inverseSurface, width: .8)),
             // focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.inverseSurface, width: .8)),
@@ -295,7 +295,7 @@ class CustomTextFormField2State extends State<CustomTextFormField2> {
             fontSize: 16.sp,
             fontWeight: FontWeight.w500,
             fontStyle: FontStyle.normal,
-            fontFamily: 'Lato',
+            fontFamily: 'WokSans',
             fontFamilyFallback: const <String>['OpenSans'],
           ),
         ),

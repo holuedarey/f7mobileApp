@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:f7apparel_mobile/widgets/colors.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -93,7 +94,7 @@ class _LoginPageContentState extends State<_LoginPageContent> {
     FocusScope.of(context).unfocus();
     if (_loginFormKey.currentState!.validate()) {
       Map<String, dynamic> parameters = {
-        'email': _emailController.text.trim(),
+        'username': _emailController.text.trim(),
         'password': _passwordController.text.trim()
       };
 
@@ -155,22 +156,15 @@ class _LoginPageContentState extends State<_LoginPageContent> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                        child: Text('Hello!',
+                        child: Text('Welcome Back!',
                             textAlign: TextAlign.start,
                             style: TextStyle(
-                                color: const Color(0Xff007BFF),
+                                color: const Color(0Xff000000),
                                 fontFamily: 'OpenSans',
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24.sp)),
                       ),
                       const VerticalSpace(size: 8),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                        child: Text('Login in to your account',
-                            textAlign: TextAlign.start,
-                            style: Theme.of(context).textTheme.titleLarge),
-                      ),
-                      const VerticalSpace(size: 28),
                       ListTile(
                         title: Padding(
                           padding: const EdgeInsets.only(bottom: 8.0),
@@ -181,7 +175,7 @@ class _LoginPageContentState extends State<_LoginPageContent> {
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
-                                fontFamily: 'Lato',
+                                fontFamily: 'WokSans',
                                 fontFamilyFallback: const <String>['OpenSans'],
                               )),
                         ),
@@ -199,7 +193,7 @@ class _LoginPageContentState extends State<_LoginPageContent> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ),
-                      const VerticalSpace(size: 28),
+                      const VerticalSpace(size: 8),
                       ListTile(
                         title: Padding(
                           padding: const EdgeInsets.only(bottom: 8.0),
@@ -210,7 +204,7 @@ class _LoginPageContentState extends State<_LoginPageContent> {
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w400,
                                 fontStyle: FontStyle.normal,
-                                fontFamily: 'Lato',
+                                fontFamily: 'WokSans',
                                 fontFamilyFallback: const <String>['OpenSans'],
                               )),
                         ),
@@ -248,15 +242,16 @@ class _LoginPageContentState extends State<_LoginPageContent> {
                             TextButton(
                               child: Text(
                                 "FORGOT YOUR PASSWORD ?",
+                                textAlign: TextAlign.right,
                                 style: TextStyle(
                                     fontWeight: FontWeight.w500,
                                     color: Theme.of(context).primaryColor,
                                     fontSize: 12.sp),
                               ),
                               onPressed: () {
-                                // Navigator.of(context)
-                                //     .pushNamed(Routes.forgotPasswordRoute);
-                                // return;
+                                Navigator.of(context)
+                                    .pushNamed(Routes.forgotPasswordRoute);
+                                return;
                               },
                             ),
                             const SizedBox(),
@@ -264,15 +259,15 @@ class _LoginPageContentState extends State<_LoginPageContent> {
                           ],
                         ),
                       ),
-                      const VerticalSpace(size: 26),
+                      const VerticalSpace(size: 16),
                       Row(
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                              padding: const EdgeInsets.symmetric(horizontal: 6.0),
                               child: BigButton(
                                 text: "Log in",
-                                backgroundColor: theme.primaryColor,
+                                backgroundColor: Colors.black,
                                 textColor: Colors.white,
                                 onPressed: _onLoginButtonPressed,
                                 borderRadius: 6.0,
@@ -281,33 +276,38 @@ class _LoginPageContentState extends State<_LoginPageContent> {
                           ),
                         ],
                       ),
-                      const VerticalSpace(size: 36),
-                      Align(
-                        alignment: Alignment.center,
-                        child: Text.rich(
-                          TextSpan(
-                            children: [
-                              TextSpan(
-                                  text: "Don’t have an account?  ",
-                                  style: Theme.of(context).textTheme.headlineSmall),
-                              TextSpan(
-                                text: "Create an account",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w500,
-                                    color: Theme.of(context).primaryColor,
-                                    fontFamily: 'Lato',
-                                    fontSize: 16.sp),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    Navigator.of(context)
-                                        .pushNamed(Routes.signupInvitationPageRoute);
+                      const VerticalSpace(size: 96),
+                      Container(
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: const Color(0xddE3E3E3), ),
+                        padding: const EdgeInsets.all(20),
+                        margin: const EdgeInsets.only(left: 10, right: 10),
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                    text: "Don’t have an account?  ",
+                                    style: Theme.of(context).textTheme.headlineSmall),
+                                TextSpan(
+                                  text: "Create an account",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      color: theme.primaryColorDark,
+                                      fontFamily: 'WokSans',
+                                      fontSize: 16.sp),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () {
+                                      Navigator.of(context)
+                                          .pushNamed(Routes.signUpEmailPasswordRoute);
 
-                                    return;
-                                  },
-                              ),
-                            ],
+                                      return;
+                                    },
+                                ),
+                              ],
+                            ),
+                            textAlign: TextAlign.center,
                           ),
-                          textAlign: TextAlign.center,
                         ),
                       ),
                     ],

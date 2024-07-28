@@ -15,11 +15,12 @@ class LoginBloc extends Bloc<LoginBlocEvent, LoginBlocState> {
       try {
         Tuple2<UserDataResponse?, String?> response =
         await IdentityService.loginEmailUser(event.context, parameters: event.parameters,);
+
         if (response.item1 != null) {
           await userRepository.createUserData(response.item1!);
-          await userRepository.insertEmail(event.parameters['email']);
+          await userRepository.insertEmail(event.parameters['username']);
           await userRepository.insertPassword(event.parameters['password']);
-          String accessToken = response.item1!.accessToken!;
+          String accessToken = response.item1!.user.token;
           emit(LoginStateSuccessful(accessToken: accessToken));
         } else {
           emit(LoginStateFailed(message: response.item2));

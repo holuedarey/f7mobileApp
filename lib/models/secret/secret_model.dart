@@ -345,62 +345,49 @@ class GroupPolicy {
 
 
 class UserDataResponse {
-  String? organizationId;
-  String? organizationName;
-  User? user;
-  String? accessToken;
-  String? refreshToken;
-  String? tokeType;
+  int status;
+  User user;
 
-  UserDataResponse(
-      {this.organizationId,
-        this.organizationName,
-        this.user,
-        this.accessToken,
-        this.refreshToken,
-        this.tokeType});
+  UserDataResponse({
+    required this.status,
+    required this.user,
+  });
 
-  UserDataResponse.fromJson(Map<String, dynamic> json) {
-    organizationId = json['organization_id'];
-    organizationName = json['organization_name'];
-    user = json['user'] != null ? User.fromJson(json['user']) : null;
-    accessToken = json['access_token'];
-    refreshToken = json['refresh_token'];
-    tokeType = json['toke_type'];
-  }
+  factory UserDataResponse.fromJson(Map<String, dynamic> json) => UserDataResponse(
+    status: json["status"],
+    user: User.fromJson(json["user"]),
+  );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
-    data['organization_id'] = organizationId;
-    data['organization_name'] = organizationName;
-    if (user != null) {
-      data['user'] = user!.toJson();
-    }
-    data['access_token'] = accessToken;
-    data['refresh_token'] = refreshToken;
-    data['toke_type'] = tokeType;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+    "status": status,
+    "user": user.toJson(),
+  };
 }
 
 class User {
-  String? email;
-  String? firstName;
-  String? lastName;
+  String token;
+  String userEmail;
+  String userNicename;
+  String userDisplayName;
 
-  User({this.email, this.firstName, this.lastName});
+  User({
+    required this.token,
+    required this.userEmail,
+    required this.userNicename,
+    required this.userDisplayName,
+  });
 
-  User.fromJson(Map<String, dynamic> json) {
-    email = json['email'];
-    firstName = json['first_name'];
-    lastName = json['last_name'];
-  }
+  factory User.fromJson(Map<String, dynamic> json) => User(
+    token: json["token"],
+    userEmail: json["user_email"],
+    userNicename: json["user_nicename"],
+    userDisplayName: json["user_display_name"],
+  );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['email'] = email;
-    data['first_name'] = firstName;
-    data['last_name'] = lastName;
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+    "token": token,
+    "user_email": userEmail,
+    "user_nicename": userNicename,
+    "user_display_name": userDisplayName,
+  };
 }

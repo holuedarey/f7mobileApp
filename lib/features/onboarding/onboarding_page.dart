@@ -21,8 +21,8 @@ class OnboardingPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Spacer(),
-            Image.asset(image, height: 200),
-            const VerticalSpace(size: 40),
+            Image.asset(image, height: 250),
+            const VerticalSpace(size: 20),
             SizedBox(
               width: 200,
               child: Text(
@@ -30,16 +30,20 @@ class OnboardingPage extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                     fontWeight: FontWeight.w500,
+                    fontSize: 18,
                     color: AppColors.backgroundColor),
               ),
             ),
-            const VerticalSpace(size: 25),
-            Text(description,
-                textAlign: TextAlign.center,
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(color: AppColors.backgroundColor)),
+            const VerticalSpace(size: 10),
+            SizedBox(
+              width: 240,
+              child: Text(description,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        color: AppColors.backgroundColor,
+                        fontSize: 13
+                      )),
+            ),
             const SizedBox(
               height: 70,
             ),

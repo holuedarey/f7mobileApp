@@ -42,15 +42,16 @@ class BigButton extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: ElevatedButton(
+          child:
+          ElevatedButton(
 
             style: OutlinedButton.styleFrom(
               elevation:elevation ?? 0,
               textStyle: TextStyle(
                 color: textColor2,
-                fontSize: 16,
+                fontSize: 14,
                 fontWeight: FontWeight.w500,
-                fontFamily: 'Lato',
+                fontFamily: 'WokSans',
               ),
               primary: textColor2,
               backgroundColor: backColor,

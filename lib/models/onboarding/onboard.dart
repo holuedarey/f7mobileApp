@@ -8,14 +8,14 @@ class Onboard {
 
 final List<Onboard> onboardData = [
   Onboard(title: "Shop Luxury Brands Anywhere",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "assets/images/onboard_screen_1.png",),
+    description: "Lorem ipsum dolor sit amet consectetur. Senectus sem aenean vestibulum augue nisl sed duis ",
+    image: "assets/images/onboarding/onboard_1.png",),
 
   Onboard(title: "Shop Luxury Brands Anywhere",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "assets/images/onboard_screen_1.png",),
+    description: "Lorem ipsum dolor sit amet consectetur. Senectus sem aenean vestibulum augue nisl sed duis ",
+    image: "assets/images/onboarding/onboard_2.png",),
 
   Onboard(title: "Shop Luxury Brands Anywhere",
-    description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    image: "assets/images/onboard_screen_1.png",),
+    description: "Lorem ipsum dolor sit amet consectetur. Senectus sem aenean vestibulum augue nisl sed duis ",
+    image: "assets/images/onboarding/onboard_3.png",),
 ];

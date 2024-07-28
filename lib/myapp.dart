@@ -1,8 +1,7 @@
+import 'package:f7apparel_mobile/attachment_page.dart';
 import 'package:f7apparel_mobile/blocs/blocs.dart';
 import 'package:f7apparel_mobile/blocs/settings/settings_bloc.dart';
 import 'package:f7apparel_mobile/blocs/settings/settings_event.dart';
-import 'package:f7apparel_mobile/features/landing_page.dart';
-import 'package:f7apparel_mobile/features/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -51,6 +50,7 @@ class F7App extends StatelessWidget {
   }
 }
 
+
 Route<dynamic> _getRoute(RouteSettings settings) {
   Widget builder = Container();
   bool fullscreenDialog = false;
@@ -69,7 +69,7 @@ Route<dynamic> _getRoute(RouteSettings settings) {
               create: (BuildContext context) {
                 return SettingsBloc()..add(SettingsEventInitialised());
               },
-              child: const OnboardingScreen()
+              child: const AttachmentPage()
               ),
         ),
       );
@@ -90,8 +90,9 @@ class Routes {
   static const attachment = "attachment";
   static const landingPageRoute = "attachment/landing_page";
   static const loginPageRoute = "attachment/login_page";
+  static const onboardingPageRoute = "attachment/onboarding";
   static const forgotPasswordRoute = "attachment/forgot_password";
-  static const signupInvitationPageRoute = "attachment/signup_step_one";
+  static const signupInvitationPageRoute = "attachment/signup";
   static const signUpStepTwoOTPRoute = "attachment/signup_step_two_otp";
   static const signUpStepThree = "attachment/signup_step_three";
   static const dashboardRoute = "attachment/dashboard";
@@ -116,7 +117,7 @@ class Routes {
   static const shiftManagerscreen = "attachment/shift_manager_screen";
   static const useShiftPatternScreen = "attachment/use_shift_pattern_screen";
 
-  static const shiftManagerSuccess = "attachment/shiftd_manager_success";
+  static const productDetailsScreen = "attachment/product_details_screen";
   static const doDailyFormScreen = "attachment/do_daily_shift_form_success";
   static const createShiftSlotRoute = "attachment/createShiftSlotScreen";
   static const createShiftSlotSuccessRoute =
@@ -133,16 +134,15 @@ class Routes {
   static const createShiftSuccessRoute = "attachment/createShiftSuccessScreen";
   static const editSlotRoute = "attachment/editSlotPage";
   static const manageJournalRoute = "attachment/manageJournalScreen";
-  static const deleteShiftScheduleRoute =
-      "attachment/deleteShiftScheduleScreen";
-  static const deleteShiftRangeSuccessRoute =
-      "attachment/deleteShiftRangeSuccessScreen";
-  static const upcomingShiftRoute = "attachment/upcomingShiftScreen";
 
-  static const dailyjournalEmotionsScreen =
-      "attachment/daily_journal_emotions_screen";
-  static const createDailyjournalScreen =
-      "attachment/create_daily_journal_screen";
-  static const createJournalSuccessRoute = "attachment/createJournalSuccessScreen";
-  static const journalHistoryRoute = "attachment/journalHistoryScreen";
+  static const cart = "attachment/cart";
+}
+
+class BottomNavBar extends StatelessWidget {
+  const BottomNavBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
 }

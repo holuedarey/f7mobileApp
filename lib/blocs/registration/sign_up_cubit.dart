@@ -45,10 +45,10 @@ class SignUpCubit extends Cubit<SignUpState> {
   //   }
   // }
 
-  void registerUser(Map<String, dynamic> payload, String tenantId) async {
+  void registerUser(Map<String, dynamic> payload) async {
     emit(SignUpLoadingState());
     try {
-      Tuple2<RegisterUserResponse?, String?> response = await IdentityService.registerUserRequest(parameters: payload, tenantId:tenantId);
+      Tuple2<RegisterUserResponse?, String?> response = await IdentityService.registerUserRequest(parameters: payload);
 
       if (response.item1 != null) {
 

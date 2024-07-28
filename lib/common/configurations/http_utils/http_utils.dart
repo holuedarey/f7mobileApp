@@ -12,15 +12,16 @@ class HttpUtils {
   );
 
   static Dio getInstance() {
-    Dio dio = Dio(options)
-      ..interceptors.add(PrettyDioLogger(
-          requestBody: true,
-          requestHeader: true,
-          responseBody: true,
-          responseHeader: false,
-          compact: false,
-          error: true,
-          maxWidth: 90));
+    Dio dio = Dio(options);
+      // ..interceptors.add(PrettyDioLogger(
+      //     requestBody: true,
+      //     requestHeader: true,
+      //     responseBody: true,
+      //     responseHeader: false,
+      //     compact: false,
+      //     error: true,
+      //     maxWidth: 90)
+      // );
     return dio;
   }
 

@@ -3,10 +3,13 @@ import 'package:f7apparel_mobile/features/login/presentation/login_page.dart';
 import 'package:f7apparel_mobile/features/onboarding/dot_indicator.dart';
 import 'package:f7apparel_mobile/features/onboarding/onboarding_page.dart';
 import 'package:f7apparel_mobile/models/onboarding/onboard.dart';
+import 'package:f7apparel_mobile/myapp.dart';
 import 'package:f7apparel_mobile/widgets/buttons.dart';
 import 'package:f7apparel_mobile/widgets/colors.dart';
 import 'package:f7apparel_mobile/widgets/spacing.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -31,34 +34,30 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     super.dispose();
   }
 
-  
   @override
   Widget build(BuildContext context) {
+    Future<dynamic> navigateSignUp() async {
+      var pushReplacement =
+          Navigator.of(context).pushNamed(Routes.signUpEmailPasswordRoute);
+      if (await StorageHelper.getBoolean('isFirstTime', false)) {
+        pushReplacement;
+      } else {
+        StorageHelper.setBoolean('isFirstTime', true);
+        pushReplacement;
+      }
+    }
 
-     Future<dynamic> navigateSignUp() async {
-      var pushReplacement = Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const LoginPage()),
-      );
-      if (StorageHelper.getBoolean('isFirstTime', false) == false) {
-          StorageHelper.setBoolean('isFirstTime', true);
-          pushReplacement;
+    Future<dynamic> navigateLogin() async {
+      var pushReplacement =
+      Navigator.of(context).pushNamed(Routes.loginPageRoute);
+      if (await StorageHelper.getBoolean('isFirstTime', false)) {
+        pushReplacement;
       } else {
+        StorageHelper.setBoolean('isFirstTime', true);
         pushReplacement;
       }
     }
-     Future<dynamic> navigateLogin() async {
-      var pushReplacement = Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => const LoginPage()),
-      );
-      if (StorageHelper.getBoolean('isFirstTime', false) == false) {
-          StorageHelper.setBoolean('isFirstTime', true);
-          pushReplacement;
-      } else {
-        pushReplacement;
-      }
-    }
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
@@ -79,7 +78,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           )),
                 ],
               ),
-
               Expanded(
                 child: PageView.builder(
                     controller: _pageController,
@@ -103,7 +101,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     backgroundColor: AppColors.backgroundColor,
                     text: "Create an Account",
                     borderOutlineColor: Colors.black12,
-                     onPressed: () => navigateSignUp(),
+                    onPressed: () => navigateSignUp(),
                   ),
                   const VerticalSpace(
                     size: 8,
@@ -117,14 +115,31 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     onPressed: () => navigateLogin(),
                   ),
                   const VerticalSpace(
-                    size: 8,
+                    size: 12,
                   ),
-                  Text("Continue as guest",
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "Continue as guest",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                color: Theme.of(context).secondaryHeaderColor,
+                                fontFamily: 'WokSans',
+                                fontSize: 16.sp),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.of(context)
+                                    .pushNamed(Routes.dashboardRoute);
+                              },
+                          ),
+                        ],
+                      ),
                       textAlign: TextAlign.center,
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .copyWith(color: AppColors.backgroundColor)),
+                    ),
+                  ),
                 ],
               ),
             ],

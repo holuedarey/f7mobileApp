@@ -8,8 +8,8 @@ import '../../common/middlewares/token_repository.dart';
 
 import '../blocs.dart';
 
-const SESSION_TIMEOUT_SECONDS = 299;
-const DISPLAY_TIMEOUT_DIALOG_AFTER_SECONDS = 301;
+const int SESSION_TIMEOUT_SECONDS = 299;
+const int DISPLAY_TIMEOUT_DIALOG_AFTER_SECONDS = 301;
 
 class AuthenticationBloc
     extends Bloc<AuthenticationBlocEvent, AuthenticationBlocState> {
@@ -74,7 +74,7 @@ class AuthenticationBloc
 
         UserDataResponse? userDataResponse  = await _hantspolStorage.getUserData();
         if (userDataResponse != null) {
-          await tokenRepository.persistToken({TokenType.ACCESS: userDataResponse.accessToken});
+          await tokenRepository.persistToken({TokenType.ACCESS: userDataResponse.user.token});
           isSignedIn = true;
           yield AuthenticationStateAuthenticated();
           Timer(const Duration(seconds: 3500), () {

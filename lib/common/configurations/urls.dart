@@ -9,11 +9,11 @@ enum HantspolUrl {
 }
 
 const Map<HantspolUrl, String>  hantspolUrlTest  = {
-  HantspolUrl.identity: 'https://hantspol-api-dev-5f03fb9625da.herokuapp.com/api/v1/',
+  HantspolUrl.identity: 'https://f7apparel.co.uk/wp-json/api/v2/',
 };
 
 const Map<HantspolUrl, String> hantspolUrlProd = {
-  HantspolUrl.identity: 'https://hantspol-api-dev-5f03fb9625da.herokuapp.com/api/v1/',
+  HantspolUrl.identity: 'https://f7apparel.co.uk/wp-json/api/v2/',
 
 };
 

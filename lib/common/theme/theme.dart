@@ -60,7 +60,7 @@ class AppTheme {
             color: Colors.white,
             fontSize: 16,
             fontWeight: FontWeight.w500,
-            fontFamily: 'Lato',
+            fontFamily: 'WokSans',
           ),
           padding: EdgeInsets.symmetric(vertical: 12.0),
           shape: RoundedRectangleBorder(
@@ -116,7 +116,7 @@ class AppTheme {
           fontSize: 20.sp,
           fontWeight: FontWeight.w600,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         displayMedium: TextStyle(
@@ -124,7 +124,7 @@ class AppTheme {
           fontSize: 24.sp,
           fontWeight: FontWeight.w600,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         displaySmall: TextStyle(
@@ -132,7 +132,7 @@ class AppTheme {
           fontSize: 16.sp,
           fontWeight: FontWeight.w600,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         headlineMedium: TextStyle(
@@ -140,7 +140,7 @@ class AppTheme {
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         headlineSmall: TextStyle(
@@ -148,7 +148,7 @@ class AppTheme {
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         titleLarge: TextStyle(
@@ -156,7 +156,7 @@ class AppTheme {
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         titleMedium: TextStyle(
@@ -164,7 +164,7 @@ class AppTheme {
           fontSize: 14.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         titleSmall: TextStyle(
@@ -172,7 +172,7 @@ class AppTheme {
           fontSize: 14.sp,
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         bodyLarge: TextStyle(
@@ -180,7 +180,7 @@ class AppTheme {
           fontSize: 12.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         bodySmall: TextStyle(
@@ -188,7 +188,7 @@ class AppTheme {
           fontSize: 14.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         bodyMedium: TextStyle(
@@ -196,7 +196,7 @@ class AppTheme {
           fontSize: 8.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         labelLarge: TextStyle(
@@ -204,7 +204,7 @@ class AppTheme {
           fontSize: 12.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         labelSmall: TextStyle(
@@ -260,7 +260,7 @@ class AppTheme {
           fontSize: 24.sp,
           fontWeight: FontWeight.w600,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         displaySmall: TextStyle(
@@ -268,7 +268,7 @@ class AppTheme {
           fontSize: 16.sp,
           fontWeight: FontWeight.w600,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         headlineMedium: TextStyle(
@@ -276,7 +276,7 @@ class AppTheme {
           fontSize: 48.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         headlineSmall: TextStyle(
@@ -284,7 +284,7 @@ class AppTheme {
           fontSize: 34.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         titleLarge: TextStyle(
@@ -292,7 +292,7 @@ class AppTheme {
           fontSize: 16.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         titleMedium: TextStyle(
@@ -300,7 +300,7 @@ class AppTheme {
           fontSize: 14.sp,
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         titleSmall: TextStyle(
@@ -308,7 +308,7 @@ class AppTheme {
           fontSize: 16.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         bodyLarge: TextStyle(
@@ -316,7 +316,7 @@ class AppTheme {
           fontSize: 12.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         bodySmall: TextStyle(
@@ -324,7 +324,7 @@ class AppTheme {
           fontSize: 14.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         bodyMedium: TextStyle(
@@ -332,7 +332,7 @@ class AppTheme {
           fontSize: 8.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         labelLarge: TextStyle(
@@ -340,7 +340,7 @@ class AppTheme {
           fontSize: 12.sp,
           fontWeight: FontWeight.w400,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         labelSmall: TextStyle(
@@ -348,7 +348,7 @@ class AppTheme {
           fontSize: 14.sp,
           fontWeight: FontWeight.w500,
           fontStyle: FontStyle.normal,
-          fontFamily: 'Lato',
+          fontFamily: 'WokSans',
           fontFamilyFallback: const <String>['OpenSans'],
         ),
         // overline: TextStyle(
@@ -356,7 +356,7 @@ class AppTheme {
         //   fontSize: 10.sp,
         //   fontWeight: FontWeight.w400,
         //   fontStyle: FontStyle.normal,
-        //   fontFamily: 'Lato',
+        //   fontFamily: 'WokSans',
         //   fontFamilyFallback: const <String>['OpenSans'],
         // ),
       ),

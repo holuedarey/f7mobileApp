@@ -16,12 +16,12 @@ import '../common/interceptors/request_interceptor.dart';
 
 /// IDENTITY ENDPOINTS
 const String sendOTP = 'Users/senduserotp';
-const String verifyuserOtp = 'Users/verifyuserOtp';
+const String verifyuserOtp = 'validate-code';
 const String registerUser = 'account/register';
 const String authPhoneLogin = 'Account/Phonelogin';
 const String facebookAuthLogin = 'Account/facebooklogin';
 const String googleAuthLogin = 'Account/googlelogin';
-const String forgetPassword = 'Account/forgetpassword/';
+const String forgetPassword = 'forget-password';
 const String changePassword = 'Account/changepassword';
 const String verifyOTPPassword = 'Account/verifyresetpasswordOTP';
 const String resetPassword = 'Account/resetpassword';
@@ -45,9 +45,9 @@ const String ResetPassword = '/api/Account/password/resetpasswordbyotp';
 const String ActivateAccount = '/api/Auth/activate/';
 
 
-const String loginEndpoint = 'account/login';
+const String loginEndpoint = 'token';
 const String verifyInviteEndpoint = 'account/invitation/verify';
-const String registerEndpoint = 'account/register';
+const String registerEndpoint = 'register';
 const String createAccessPinEndpoint = 'accesspin/create';
 const String resetPasswordEndpoint = 'reset-password';
 const String forgotPasswordEndpoint = 'forgot-password';
@@ -109,6 +109,7 @@ class IdentityService {
         data: parameters,
       );
 
+      print(response);
       if (response.data['data'] != null) {
         final UserOtpResponse userOtpResponse = UserOtpResponse.fromJson(response.data);
         return Tuple2(userOtpResponse, null);
@@ -156,7 +157,7 @@ class IdentityService {
 
 
   static Future<Tuple2<RegisterUserResponse?, String?>> registerUserRequest(
-      {required Map<String, dynamic> parameters, required String tenantId}) async {
+      {required Map<String, dynamic> parameters}) async {
     final url = baseUrl! + registerEndpoint;
     final dio = HttpUtils.getInstance();
     dio.interceptors.addAll([
@@ -169,8 +170,7 @@ class IdentityService {
         url,
         options:
         Options(contentType:Headers.jsonContentType, headers: {
-          "Accept": "application/json",
-          "tenant-id": tenantId,
+          "Accept": "application/json"
         }),
         data: parameters,
       );
@@ -289,7 +289,7 @@ class IdentityService {
 
   static Future<Tuple2<UserOtpResponse?, String?>> forgetPasswordRequest(
       {required String email}) async {
-    final url = '${sendOTPBaseUrl!}$forgetPassword?email=$email';
+    final url = '${baseUrl!}$forgetPassword';
 
 
     final dio = HttpUtils.getInstance();
@@ -305,7 +305,7 @@ class IdentityService {
         Options(contentType:Headers.jsonContentType, headers: {
           "Accept": "application/json",
         }),
-        // data: parameters,
+        data: {'email' : email},
       );
 
       if (response.data['data'] != null) {
